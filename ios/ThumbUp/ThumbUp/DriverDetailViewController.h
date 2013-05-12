@@ -19,5 +19,6 @@
 @property (nonatomic, retain) IBOutlet UITextField * recurrencyLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andModel:(DriverRideModel *)model;
+- (IBAction)pushRoutesViewController:(id)sender;
 
 @end

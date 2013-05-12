@@ -9,6 +9,9 @@
 #import "DriverDetailViewController.h"
 #import "DriverRideModel.h"
 #import "DriverViewController.h"
+#import "RoutesViewController.h"
+
+#define kDestinationAddress @"26 rue Garibaldi, Montreuil"
 
 @interface DriverDetailViewController ()
 
@@ -30,6 +33,11 @@
         self.title = NSLocalizedString(HOME_DRIVERVIEWCONTROLLER_TITLE,HOME_DRIVERVIEWCONTROLLER_TITLE);
     }
     return self;
+}
+
+- (IBAction)pushRoutesViewController:(id)sender {
+    RoutesViewController *routesViewController = [[RoutesViewController alloc] initWithNibName:NSStringFromClass([RoutesViewController class]) bundle:[NSBundle mainBundle] andDestinationAddress:kDestinationAddress];
+    [self.navigationController pushViewController:routesViewController animated:YES];
 }
 
 - (void)viewDidLoad
