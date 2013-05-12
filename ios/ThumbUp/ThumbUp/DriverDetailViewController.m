@@ -11,8 +11,6 @@
 #import "DriverViewController.h"
 #import "RoutesViewController.h"
 
-#define kDestinationAddress @"26 rue Garibaldi, Montreuil"
-
 @interface DriverDetailViewController ()
 
 @property (nonatomic, retain) DriverRideModel * model;
@@ -36,7 +34,7 @@
 }
 
 - (IBAction)pushRoutesViewController:(id)sender {
-    RoutesViewController *routesViewController = [[RoutesViewController alloc] initWithNibName:NSStringFromClass([RoutesViewController class]) bundle:[NSBundle mainBundle] andDestinationAddress:kDestinationAddress];
+    RoutesViewController *routesViewController = [[RoutesViewController alloc] initWithNibName:NSStringFromClass([RoutesViewController class]) bundle:[NSBundle mainBundle] andModel:self.model];
     [self.navigationController pushViewController:routesViewController animated:YES];
 }
 

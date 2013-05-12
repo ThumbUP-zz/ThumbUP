@@ -13,6 +13,11 @@
 
 @interface OnthegoViewController : UIViewController<MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
+@property (strong, nonatomic) CLLocation *location;
+@property (strong, nonatomic) CLLocation *destination;
+@property (strong, nonatomic) NSString *destinationString;
+@property (strong, nonatomic) NSMutableArray *routes;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andModel:(DriverRideModel *)model;
 
 @end

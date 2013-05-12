@@ -10,8 +10,11 @@
 #import "AFHTTPClient.h"
 #import "AFJSONRequestOperation.h"
 #import "AnnotationLocation.h"
+#import "DriverRideModel.h"
 
 @interface RoutesViewController ()
+
+@property (nonatomic, retain) DriverRideModel * model;
 
 @end
 
@@ -228,10 +231,11 @@
 }
 
 #pragma mark - Controller LifeCycle
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andDestinationAddress:(NSString *)destinationAddress {
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andModel:(DriverRideModel *)model {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.destinationString = destinationAddress;
+        self.model = model;
+        self.destinationString = model.endLocation;;
     }
     return self;
 }

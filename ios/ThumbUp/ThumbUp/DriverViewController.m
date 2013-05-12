@@ -34,8 +34,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self.model setStartLocation:@"Croix de Chavaux, Montreuil"];
-        [self.model setEndLocation:@"Gare de l'Est, Paris"];
+        [self.model setStartLocation:@"27 ter rue du Progrès, Montreuil"];
+        [self.model setEndLocation:@"26 rue de garibaldi, Montreuil"];
         self.title = NSLocalizedString(HOME_DRIVERVIEWCONTROLLER_TITLE,HOME_DRIVERVIEWCONTROLLER_TITLE);
     }
     return self;

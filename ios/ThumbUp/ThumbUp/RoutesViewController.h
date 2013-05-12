@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
+
+@class DriverRideModel;
+
 @interface RoutesViewController : UIViewController <MKMapViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray *mapViews;
@@ -21,6 +24,6 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andDestinationAddress:(NSString *)destinationAddress;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andModel:(DriverRideModel *)model;
 
 @end
