@@ -235,7 +235,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.model = model;
-        self.destinationString = model.endLocation;;
+        self.destinationString = model.endLocation;
     }
     return self;
 }
@@ -250,11 +250,11 @@
     self.pageControl.currentPage = 0;
     self.pageControl.numberOfPages = self.routes.count;
     
-    [geocoder geocodeAddressString:@"27 ter rue du Progrès, Montreuil" completionHandler:^(NSArray *placemarks, NSError *error) {
+    [geocoder geocodeAddressString:self.model.startLocation completionHandler:^(NSArray *placemarks, NSError *error) {
         if(placemarks) {
             self.location = ((CLPlacemark *)[placemarks objectAtIndex:0]).location;
             
-            [geocoder geocodeAddressString:self.destinationString completionHandler:^(NSArray *placemarks, NSError *error) {
+            [geocoder geocodeAddressString:self.model.endLocation completionHandler:^(NSArray *placemarks, NSError *error) {
                 if(placemarks) {
                     self.destination = ((CLPlacemark *)[placemarks objectAtIndex:0]).location;
                     [self startRouteRequest];
