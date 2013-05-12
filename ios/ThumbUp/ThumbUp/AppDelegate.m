@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "HomeViewController.h"
 
+
+#define NAVBAR_COLOR [UIColor blueColor]
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -16,6 +19,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.navigationController = [[UINavigationController alloc] init];
+    [self.navigationController.navigationBar setTintColor:NAVBAR_COLOR];
     
     HomeViewController * homeViewController = [[HomeViewController alloc] initWithNibName:NSStringFromClass([HomeViewController class]) bundle:nil];
     [self.navigationController pushViewController:homeViewController animated:NO];
